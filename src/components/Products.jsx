@@ -43,7 +43,7 @@ const products = [
 ];
 function Products() {
   return (
-    <div className="flex  justify-between ">
+    <div className="flex justify-between">
       {products.map((product) => (
         <ProductCard key={product.id} product={product} />
       ))}

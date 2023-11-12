@@ -20,8 +20,8 @@ const navItems = [
 
 function Header() {
   return (
-    <header className="h-[168px] w-full flex flex-col ">
-      <div className="flex items-center px-[51px] h-[68px] w-full border-b border-[#ACACAC] justify-between">
+    <header className="h-[168px] w-full flex flex-col items-center justify-center ">
+      <div className="flex items-center px-[51px] h-[68px] w-full border-b border-[#ACACAC] justify-center gap-[120px] ">
         <div>
           <img src={image1} alt="" />
         </div>
@@ -54,7 +54,7 @@ function Header() {
           </div>
         </div>
       </div>
-      <nav className="px-[51px] py-3 flex items-center justify-between border-b border-[#ECEFF2]">
+      <nav className="px-[51px] py-3 flex items-center justify-between border-b border-[#ECEFF2] gap-[30px]">
         {navItems.map((item) => (
           <p key={item.id} className="text-[#444A51] text-sm font-semibold">
             {item.name}
