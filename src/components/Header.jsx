@@ -4,6 +4,7 @@ import image3 from "../assets/image7.png";
 import image4 from "../assets/image8.svg";
 import searchIcon from "../assets/search.svg";
 import heartIcon from "../assets/heart.svg";
+import menuIcon from "../assets/menu.svg";
 import bagIcon from "../assets/bag.svg";
 
 const navItems = [
@@ -21,17 +22,30 @@ const navItems = [
 function Header() {
   return (
     <header className="h-[168px] w-full flex flex-col items-center justify-center ">
-      <div className="flex items-center px-[51px] h-[68px] w-full border-b border-[#ACACAC] justify-center gap-[120px] ">
+      <div className="flex items-center md:px-[51px] h-[68px] w-full border-b border-[#ACACAC] md:justify-center justify-between md:gap-[120px] ">
         <div>
           <img src={image1} alt="" />
         </div>
-        <div className="flex items-center gap-[30px]">
+        <div className="hidden md:flex items-center gap-[30px]">
           <img src={image2} alt="" />
           <img src={image3} alt="" />
           <img src={image4} alt="" />
         </div>
+        {/* mobile-nav */}
+        <div className="md:hidden flex gap-4">
+          <div className="w-10 h-10 border flex items-center justify-center rounded-[7px]">
+            {" "}
+            <img src={searchIcon} alt="" />
+          </div>
+          <div className="w-10 h-10 border flex items-center justify-center rounded-[7px]">
+            <img src={heartIcon} alt="" />
+          </div>
+          <div className="w-10 h-10 bg-[#009BC7] flex items-center justify-center rounded-[7px]">
+            <img src={menuIcon} alt="" />
+          </div>
+        </div>
 
-        <div className="flex">
+        <div className="hidden md:flex">
           <div className="relative mr-5">
             <input
               placeholder="Axtar"
@@ -43,7 +57,7 @@ function Header() {
               className="absolute right-3 top-1/2 -translate-y-1/2"
             />
           </div>
-          <div className="flex items-center gap-5">
+          <div className="hidden md:flex items-center gap-5">
             <img src={heartIcon} alt="" />
             <img src={bagIcon} alt="" />
             <div className="flex items-center gap-[10px]">
@@ -54,7 +68,7 @@ function Header() {
           </div>
         </div>
       </div>
-      <nav className="px-[51px] py-3 flex items-center justify-between border-b border-[#ECEFF2] gap-[30px]">
+      <nav className="hidden px-[51px] py-3 md:flex items-center justify-between border-b border-[#ECEFF2] gap-[30px]">
         {navItems.map((item) => (
           <p key={item.id} className="text-[#444A51] text-sm font-semibold">
             {item.name}
